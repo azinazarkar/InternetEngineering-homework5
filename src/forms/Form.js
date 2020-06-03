@@ -15,7 +15,7 @@ function Form (props){
     const [vals , setVals] = useState([])
     // const [missed , setMissed] = useState([])
     useEffect(() => {
-      Axios.get("http://localhost:9000/api/forms/" + id).then(
+      Axios.get("https://hw5-backend-ee.herokuapp.com/api/forms/" + id).then(
         (res) => {
           setForm(res.data);
         }
@@ -43,7 +43,7 @@ function Form (props){
         }
       });
       if (missed.length === 0 ){
-        Axios.post(`http://localhost:9000/api/forms/${id}/submitted`, { vals })
+        Axios.post(`https://hw5-backend-ee.herokuapp.com/api/forms/${id}/submitted`, { vals })
         .then(res => {
           console.log(res.data)
         })

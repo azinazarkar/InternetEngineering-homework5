@@ -16,7 +16,7 @@ export default class MainPage extends React.Component{
     }
 
     componentDidMount() {
-        Axios.get("http://localhost:9000/api/forms").then((res) => {
+        Axios.get("https://hw5-backend-ee.herokuapp.com/api/forms").then((res) => {
         console.log(res.data)
           this.setState({
             list_of_forms: res.data,
